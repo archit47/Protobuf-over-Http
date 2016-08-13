@@ -23,9 +23,10 @@ headers = {'Content-Type': 'application/x-protobuf', 'Accept': 'application/x-pr
 try:
 	ses = requests.Session()
 	ses.headers.update(headers)
-	r = ses.post(url, data=employee_details.SerializeToString())
+	resp = ses.post(url, data=employee_details.SerializeToString())
 
-	print "Status Code received: " , r.status_code
+	print "Status Code of the response: " , resp.status_code
+	print "Response from Python-Service ", resp
 
 except Exception as err:
 	print "Some error has occurred while sending the message"
