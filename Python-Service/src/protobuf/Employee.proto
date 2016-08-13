@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+
+
+message Employee{
+	optional int32 id = 1;
+	
+	required string name = 2;
+	required string email = 3;
+	optional string phone_number = 4;
+
+	optional bool isBOEmployee = 5 [default = true];
+	
+}
