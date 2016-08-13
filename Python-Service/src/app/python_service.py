@@ -12,7 +12,9 @@ def hello():
 		if request.headers['Content-Type'] == 'application/x-protobuf':
 			empl.ParseFromString(request.stream.read())
 			print "Request message received is a Protobuf"
-			
+
+			print empl
+
 			return "Protobuf Message Received"
 
 		else:
